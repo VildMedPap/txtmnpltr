@@ -21,7 +21,15 @@ class Utils {
     }
 
     static margonize(text) {
-        return "margonize";
+        const chars = text.split("");
+        for (let i = 0; i < chars.length; i++) {
+            if (Math.random() > 0.5) {
+                chars[i] = chars[i].toUpperCase();
+            } else {
+                chars[i] = chars[i].toLowerCase();
+            }
+        }
+        return chars.join("");
     }
 
     static numeronymize(text) {
