@@ -92,7 +92,7 @@ manipulatorButtons.addEventListener("click", (event) => {
     if (!isBtn) return;
 
     const inputText = textInput.value;
-    const manipulateType = event.target.outerText;
+    const manipulateType = event.target.id;
     const manipulatedText = Utils.manipulate(inputText, manipulateType);
 
     textOutput.value = manipulatedText;
@@ -102,7 +102,7 @@ manipulatorButtons.addEventListener("dblclick", (event) => {
     const isBtn = event.target.matches("button");
     if (!isBtn) return;
 
-    let manipulateType = event.target.outerText;
+    let manipulateType = event.target.id;
     if (manipulateType !== "kripkerize") return;
 
     const inputText = textInput.value;
