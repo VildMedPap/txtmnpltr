@@ -7,4 +7,15 @@ html(lang="en")
         title txtmnpltr
         link(rel="stylesheet", href="css/main.css")
     body
-        h1 Welcome to txtmnpltr!
+        .app
+            .app__textIO
+                label.app__label Input
+                    textarea.app__input
+            .app__controllers
+                button.btn(type="submit") reverse
+                button.btn(type="submit") kripkerize
+                button.btn(type="submit") margonize
+                button.btn(type="submit") numeronymize
+            .app__textIO
+                label.app__label Output
+                    textarea.app__input
