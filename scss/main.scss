@@ -12,4 +12,64 @@ body {
     @include flexbox-c2;
     height: 100%;
     background: map-get($colors, lightblack);
+
+    ::selection {
+        color: map-get($colors, lightblack);
+        background: rgba(map-get($colors, yellow), 0.75);
+    }
+}
+
+.app {
+    @include flexbox-c2;
+    @include flexbox() {
+        align-items: center;
+        justify-content: space-evenly;
+    }
+    width: 75%;
+
+    &__controllers {
+        @include flexbox() {
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    &__label,
+    &__input {
+        display: block;
+    }
+
+    &__label {
+        text-transform: uppercase;
+        font-weight: 700;
+    }
+
+    &__input {
+        height: 20rem;
+        width: 20rem;
+        padding: 1rem;
+        font-weight: 300;
+    }
+}
+
+.btn {
+    width: 8rem;
+    padding: 0.5rem;
+    margin: 0.5rem 0;
+    color: map-get($colors, yellow);
+    background: map-get($colors, lightblack);
+    border: {
+        width: 1px;
+        style: solid;
+        color: map-get($colors, yellow);
+        radius: 0.5rem;
+    }
+
+    &:hover,
+    &:active,
+    &.active {
+        color: map-get($colors, lightblack);
+        background: map-get($colors, yellow);
+    }
 }
