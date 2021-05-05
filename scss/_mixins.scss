@@ -1,0 +1,46 @@
+@mixin reset() {
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        scroll-behavior: smooth;
+        line-height: 1.5;
+    }
+
+    input,
+    button,
+    textarea,
+    select {
+        font: inherit;
+
+        &:focus,
+        &:active {
+            outline: none;
+        }
+    }
+
+    a {
+        color: inherit;
+        text-decoration: inherit;
+    }
+}
+
+@mixin flexbox() {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    @content;
+}
+
+@mixin flexbox-c2() {
+    @include flexbox() {
+        align-items: center;
+        justify-content: center;
+    }
+}

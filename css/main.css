@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700&display=swap");
+body {
+  font-family: "El Messiri", sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  color: #fbfbfb;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  scroll-behavior: smooth;
+  line-height: 1.5;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+input:focus, input:active,
+button:focus,
+button:active,
+textarea:focus,
+textarea:active,
+select:focus,
+select:active {
+  outline: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background: #2d2e2e;
+}
+
+/*# sourceMappingURL=main.css.map */

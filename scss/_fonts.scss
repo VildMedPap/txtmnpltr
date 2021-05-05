@@ -1,0 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700&display=swap");
+
+@mixin ElMessiri($weight: normal, $style: normal) {
+    font-family: "El Messiri", sans-serif;
+    font-weight: $weight;
+    font-style: $style;
+}
+
+body {
+    @include ElMessiri();
+    color: map-get($colors, white);
+}
