@@ -13,5 +13,5 @@ Making small text manipulations.
 Purely frontend objectives:
 
 -   **HTML**: _pug as a preprocessor_
--   **CSS**: _positioning with flex box_, _styling input_, _styling buttons_
+-   **CSS**: _BEM naming convention_, _positioning with flex box_, _styling input_, _styling buttons_
 -   **JavaScript**:
