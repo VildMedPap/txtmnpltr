@@ -1,5 +1,8 @@
-const controllers = document.getElementsByClassName(
+const manipulatorButtons = document.getElementsByClassName(
     "app__controllers--manipulators"
+)[0];
+const actionButtons = document.getElementsByClassName(
+    "app__controllers--actions"
 )[0];
 const textInput = document.querySelector(".app__textInput > label > textarea");
 const textOutput = document.querySelector(
@@ -84,7 +87,7 @@ class Utils {
     }
 }
 
-controllers.addEventListener("click", (event) => {
+manipulatorButtons.addEventListener("click", (event) => {
     const isBtn = event.target.matches("button");
     if (!isBtn) return;
 
@@ -95,7 +98,7 @@ controllers.addEventListener("click", (event) => {
     textOutput.value = manipulatedText;
 });
 
-controllers.addEventListener("dblclick", (event) => {
+manipulatorButtons.addEventListener("dblclick", (event) => {
     const isBtn = event.target.matches("button");
     if (!isBtn) return;
 
@@ -107,4 +110,22 @@ controllers.addEventListener("dblclick", (event) => {
     const manipulatedText = Utils.manipulate(inputText, manipulateType);
 
     textOutput.value = manipulatedText;
+});
+
+actionButtons.addEventListener("click", (event) => {
+    const isBtn = event.target.matches("button");
+    if (!isBtn) return;
+
+    const actionType = event.target.outerText;
+
+    if (actionType === "clear") {
+        textInput.value = null;
+        textOutput.value = null;
+        return;
+    }
+
+    if (actionType === "copy") {
+        textOutput.select();
+        navigator.clipboard.writeText(textOutput.value);
+    }
 });
