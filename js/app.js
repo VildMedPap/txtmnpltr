@@ -9,6 +9,7 @@ class Utils {
         if (type === "reverse") return this.reverse(text);
         if (type === "kripkerize") return this.kripkerize(text);
         if (type === "margonize") return this.margonize(text);
+        if (type === "devowelize") return this.devowelize(text);
         if (type === "numeronymize") return this.numeronymize(text);
     }
 
@@ -34,6 +35,10 @@ class Utils {
                     : char.toLowerCase();
             })
             .join("");
+    }
+
+    static devowelize(text) {
+        return "devowelize";
     }
 
     static numeronymize(text) {
