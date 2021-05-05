@@ -17,19 +17,23 @@ class Utils {
     }
 
     static kripkerize(text) {
-        return "kripkerize";
+        return text
+            .split("")
+            .map((char) => {
+                return char === "r" ? "w" : char === "R" ? "W" : char;
+            })
+            .join("");
     }
 
     static margonize(text) {
-        const chars = text.split("");
-        for (let i = 0; i < chars.length; i++) {
-            if (Math.random() > 0.5) {
-                chars[i] = chars[i].toUpperCase();
-            } else {
-                chars[i] = chars[i].toLowerCase();
-            }
-        }
-        return chars.join("");
+        return text
+            .split("")
+            .map((char) => {
+                return Math.random() > 0.5
+                    ? char.toUpperCase()
+                    : char.toLowerCase();
+            })
+            .join("");
     }
 
     static numeronymize(text) {
@@ -39,10 +43,8 @@ class Utils {
 
 controllers.addEventListener("click", (event) => {
     const isBtn = event.target.matches("button");
-
-    if (!isBtn) {
-        return;
-    }
+    console.log(event.type);
+    if (!isBtn) return;
 
     const inputText = textInput.value;
     const manipulateType = event.target.outerText;
