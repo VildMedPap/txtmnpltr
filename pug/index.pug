@@ -14,11 +14,23 @@ html(lang="en")
                     textarea.app__input
             .app__controllers
                 .app__controllers--manipulators
-                    button.btn reverse
-                    button.btn kripkerize
-                    button.btn margonize
-                    button.btn devowelize
-                    button.btn numeronymize
+                    button.btn#reverse reverse
+                    button.btn#kripkerize kripkerize
+                        span.btn__tooltip
+                            | One click:
+                            br
+                            | rhotacism (r => w)
+                            br
+                            br
+                            | Double click:
+                            br
+                            | labdacism (l => w)
+                    button.btn#margonize margonize
+                        span.btn__tooltip rANdom cApITalIzATioN
+                    button.btn#devowelize devowelize
+                        span.btn__tooltip remove all vowels = rmv ll vwls
+                    button.btn#numeronymize numeronymize
+                        span.btn__tooltip accessibility = a11y
                 .app__controllers--actions
                     button.btn.btn--clear clear
                     button.btn.btn--copy copy
