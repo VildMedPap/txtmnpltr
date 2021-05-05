@@ -6,16 +6,17 @@ html(lang="en")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         title txtmnpltr
         link(rel="stylesheet", href="css/main.css")
+        script(src="js/app.js" defer)
     body
         .app
-            .app__textIO
+            .app__textInput
                 label.app__label Input
                     textarea.app__input
             .app__controllers
-                button.btn(type="submit") reverse
-                button.btn(type="submit") kripkerize
-                button.btn(type="submit") margonize
-                button.btn(type="submit") numeronymize
-            .app__textIO
+                button.btn reverse
+                button.btn kripkerize
+                button.btn margonize
+                button.btn numeronymize
+            .app__textOutput
                 label.app__label Output
                     textarea.app__input
