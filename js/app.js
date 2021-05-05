@@ -1,4 +1,6 @@
-const controllers = document.getElementsByClassName("app__controllers")[0];
+const controllers = document.getElementsByClassName(
+    "app__controllers--manipulators"
+)[0];
 const textInput = document.querySelector(".app__textInput > label > textarea");
 const textOutput = document.querySelector(
     ".app__textOutput > label > textarea"
@@ -8,6 +10,8 @@ class Utils {
     static manipulate(text, type) {
         if (type === "reverse") return this.reverse(text);
         if (type === "kripkerize") return this.kripkerize(text);
+        if (type === "kripkerize_lambdacism")
+            return this.kripkerize_lambdacism(text);
         if (type === "margonize") return this.margonize(text);
         if (type === "devowelize") return this.devowelize(text);
         if (type === "numeronymize") return this.numeronymize(text);
@@ -26,11 +30,24 @@ class Utils {
             .join("");
     }
 
+    static kripkerize_lambdacism(text) {
+        return text
+            .split("")
+            .map((char) => {
+                return char === "r" || char === "l"
+                    ? "w"
+                    : char === "R" || char === "L"
+                    ? "W"
+                    : char;
+            })
+            .join("");
+    }
+
     static margonize(text) {
         return text
             .split("")
             .map((char) => {
-                return Math.random() > 0.5
+                return Math.random() > 0.65
                     ? char.toUpperCase()
                     : char.toLowerCase();
             })
@@ -69,11 +86,24 @@ class Utils {
 
 controllers.addEventListener("click", (event) => {
     const isBtn = event.target.matches("button");
-    console.log(event.type);
     if (!isBtn) return;
 
     const inputText = textInput.value;
     const manipulateType = event.target.outerText;
+    const manipulatedText = Utils.manipulate(inputText, manipulateType);
+
+    textOutput.value = manipulatedText;
+});
+
+controllers.addEventListener("dblclick", (event) => {
+    const isBtn = event.target.matches("button");
+    if (!isBtn) return;
+
+    let manipulateType = event.target.outerText;
+    if (manipulateType !== "kripkerize") return;
+
+    const inputText = textInput.value;
+    manipulateType = "kripkerize_lambdacism";
     const manipulatedText = Utils.manipulate(inputText, manipulateType);
 
     textOutput.value = manipulatedText;
