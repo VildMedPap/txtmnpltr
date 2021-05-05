@@ -38,16 +38,32 @@ class Utils {
     }
 
     static devowelize(text) {
+        const vowels = "iyeauoæøå";
         return text
             .split("")
             .map((char) => {
-                return "iyeauoæøå".includes(char) ? "" : char;
+                return vowels.includes(char) ? "" : char;
             })
             .join("");
     }
 
     static numeronymize(text) {
-        return "numeronymize";
+        const nonWords = /(?=[^\wæøåÆØÅ])|(?<=[^\wæøåÆØÅ])/g;
+        const isWord = /[\wæøåÆØÅ]+/;
+
+        return text
+            .split(nonWords)
+            .map((token) => {
+                if (isWord.test(token)) {
+                    const n = token.length;
+                    if (n <= 2) return token;
+
+                    return `${token.slice(0, 1)}${n - 2}${token.slice(-1)}`;
+                }
+
+                return token;
+            })
+            .join("");
     }
 }
 
