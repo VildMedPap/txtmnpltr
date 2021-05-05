@@ -38,7 +38,12 @@ class Utils {
     }
 
     static devowelize(text) {
-        return "devowelize";
+        return text
+            .split("")
+            .map((char) => {
+                return "iyeauoæøå".includes(char) ? "" : char;
+            })
+            .join("");
     }
 
     static numeronymize(text) {
