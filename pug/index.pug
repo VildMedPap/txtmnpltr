@@ -13,11 +13,15 @@ html(lang="en")
                 label.app__label Input
                     textarea.app__input
             .app__controllers
-                button.btn reverse
-                button.btn kripkerize
-                button.btn margonize
-                button.btn devowelize
-                button.btn numeronymize
+                .app__controllers--manipulators
+                    button.btn reverse
+                    button.btn kripkerize
+                    button.btn margonize
+                    button.btn devowelize
+                    button.btn numeronymize
+                .app__controllers--actions
+                    button.btn.btn--clear clear
+                    button.btn.btn--copy copy
             .app__textOutput
                 label.app__label Output
                     textarea.app__input

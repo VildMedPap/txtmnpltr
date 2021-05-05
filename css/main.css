@@ -70,11 +70,12 @@ body ::selection {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: space-evenly;
   width: 75%;
 }
 .app__controllers {
+  height: 20rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: -webkit-flex;
@@ -82,6 +83,26 @@ body ::selection {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+.app__controllers--manipulators {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+.app__controllers--actions {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
 }
 .app__label, .app__input {
   display: block;
@@ -99,18 +120,33 @@ body ::selection {
 
 .btn {
   width: 8rem;
-  padding: 0.5rem;
-  margin: 0.5rem 0;
+  padding: 0.25rem 0.5rem;
+  margin: 0.25rem 0;
   color: #fdc500;
   background: #2d2e2e;
   border-width: 1px;
   border-style: solid;
   border-color: #fdc500;
   border-radius: 0.5rem;
+  cursor: pointer;
 }
-.btn:hover, .btn:active, .btn.active {
+.btn:hover, .btn:active {
   color: #2d2e2e;
   background: #fdc500;
+}
+.btn--clear {
+  color: #ff1934;
+  border-color: #ff1934;
+}
+.btn--clear:hover, .btn--clear:active {
+  background: #ff1934;
+}
+.btn--copy {
+  color: #37bb75;
+  border-color: #37bb75;
+}
+.btn--copy:hover, .btn--copy:active {
+  background: #37bb75;
 }
 
 /*# sourceMappingURL=main.css.map */

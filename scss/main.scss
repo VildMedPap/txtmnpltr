@@ -22,16 +22,35 @@ body {
 .app {
     @include flexbox-c2;
     @include flexbox() {
-        align-items: center;
+        align-items: flex-end;
         justify-content: space-evenly;
     }
     width: 75%;
 
     &__controllers {
+        height: 20rem;
         @include flexbox() {
             flex-direction: column;
             align-items: center;
             justify-content: center;
+        }
+
+        &--manipulators {
+            height: 100%;
+            @include flexbox() {
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+            }
+        }
+
+        &--actions {
+            height: 100%;
+            @include flexbox() {
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-end;
+            }
         }
     }
 
@@ -55,8 +74,8 @@ body {
 
 .btn {
     width: 8rem;
-    padding: 0.5rem;
-    margin: 0.5rem 0;
+    padding: 0.25rem 0.5rem;
+    margin: 0.25rem 0;
     color: map-get($colors, yellow);
     background: map-get($colors, lightblack);
     border: {
@@ -65,11 +84,31 @@ body {
         color: map-get($colors, yellow);
         radius: 0.5rem;
     }
+    cursor: pointer;
 
     &:hover,
-    &:active,
-    &.active {
+    &:active {
         color: map-get($colors, lightblack);
         background: map-get($colors, yellow);
+    }
+
+    &--clear {
+        color: map-get($colors, red);
+        border-color: map-get($colors, red);
+
+        &:hover,
+        &:active {
+            background: map-get($colors, red);
+        }
+    }
+
+    &--copy {
+        color: map-get($colors, green);
+        border-color: map-get($colors, green);
+
+        &:hover,
+        &:active {
+            background: map-get($colors, green);
+        }
     }
 }
