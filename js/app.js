@@ -121,11 +121,14 @@ actionButtons.addEventListener("click", (event) => {
     if (actionType === "clear") {
         textInput.value = null;
         textOutput.value = null;
+        textInput.select();
         return;
     }
 
     if (actionType === "copy") {
-        textOutput.select();
+        if (textOutput.value) {
+            textOutput.select();
+        }
         navigator.clipboard.writeText(textOutput.value);
     }
 });
